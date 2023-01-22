@@ -1,0 +1,34 @@
+.formBox {
+    min-width: 400px;
+    width: 40vw;
+    max-width: 400px;
+    padding: 2rem;
+    border-radius: 1rem;
+    background-color: #FCF7F8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;
+    margin: 2rem auto;
+}
+
+button {
+    width: 100%;
+    height: 40px;
+    background-color: #275DAD;
+    outline: 0;
+    border: 0;
+    border-radius: 5px;
+    color: white;
+    transition: background-color 250ms ease, scale, 250ms ease;
+}
+
+button:hover {
+    background-color: #1a3f77;
+    cursor: pointer;
+}
+
+button:active {
+    transform: scale(1.05);
+}

@@ -1,0 +1,42 @@
+.boxInput {
+    width: 100%;
+    position: relative;
+}
+
+.inpt::placeholder {
+    opacity: 0;
+}
+
+.inpt {
+    width: 100%;
+    height: 40px;
+    border: 1px #275DAD solid;
+    border-radius: 5px;
+    padding: 0.5rem;
+    position: relative;
+    transition: border 1s ease;
+}
+
+.lbl {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+    transition: all 450ms ease;
+    color: #275DAD;
+    cursor: text;
+    user-select: none;
+    font-size: 0.9rem;
+}
+
+.inpt:focus+.lbl,
+.inpt:not(:placeholder-shown)+.lbl {
+    font-size: 0.8rem;
+    top: 0;
+    background: white;
+}
+
+.inpt:valid {
+    border: 1px solid green !important;
+    transition: border 1.5s ease;
+}
