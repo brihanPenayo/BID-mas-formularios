@@ -40,3 +40,20 @@
     border: 1px solid green !important;
     transition: border 1.5s ease;
 }
+
+.error {
+    display: block;
+    color: red;
+    font-size: 0;
+    position: absolute;
+    transition: all 350ms ease;
+}
+
+.inpt:invalid[focus="true"] {
+    border: 1px solid red !important;
+    transition: border 1.5s ease;
+}
+
+.inpt:invalid[focus="true"]~.error {
+    font-size: 0.8rem;
+}

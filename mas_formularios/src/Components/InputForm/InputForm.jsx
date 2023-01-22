@@ -1,8 +1,14 @@
 import React from 'react'
+import { useState } from 'react';
 import styles from './InputForm.module.css'
 
 const InputForm = (props) => {
     const { name, type, labelText, msgError, onChange, value, pattern } = props;
+    const [focus, setFocus] = useState(false);
+
+    const handleFocus = () => {
+        setFocus(true);
+    }
 
     return (
         <div className={styles.boxInput}>
@@ -15,10 +21,13 @@ const InputForm = (props) => {
                 value={value}
                 required
                 pattern={pattern}
-                placeholder={labelText} />
+                placeholder={labelText}
+                onBlur={handleFocus}
+                focus={focus.toString()} />
             <label className={styles.lbl} htmlFor={labelText}>{labelText}</label>
-            <p>{msgError}</p>
+            <p className={styles.error}>{msgError}</p>
         </div>
+
     )
 }
 

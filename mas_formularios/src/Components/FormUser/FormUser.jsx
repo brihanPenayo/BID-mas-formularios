@@ -42,6 +42,7 @@ const FormUser = () => {
 
     return (
         <form className={styles.formBox} onSubmit={handleSubmit}>
+            <h1>Formulario de Registro</h1>
             <InputForm onChange={onChange}
                 name="firstName" type="text" labelText="Nombre: "
                 value={data.firstName} msgError={msgError.errorUno}
