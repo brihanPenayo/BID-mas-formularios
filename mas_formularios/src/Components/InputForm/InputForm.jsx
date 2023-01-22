@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './InputForm.module.css'
 
 const InputForm = (props) => {
-    const { name, type, labelText, msgError, onChange, value } = props;
+    const { name, type, labelText, msgError, onChange, value, pattern } = props;
 
     return (
         <div className={styles.boxInput}>
@@ -14,6 +14,7 @@ const InputForm = (props) => {
                 onChange={onChange}
                 value={value}
                 required
+                pattern={pattern}
                 placeholder={labelText} />
             <label className={styles.lbl} htmlFor={labelText}>{labelText}</label>
             <p>{msgError}</p>

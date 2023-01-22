@@ -20,7 +20,12 @@ const FormUser = () => {
 
     const [data, setData] = useState(initialState);
 
-
+    const pattern = {
+        ptrnUno: `^.{2,16}$`, // minimo 2 y maximo 16
+        ptrnDos: `^.{5,16}$`, // minimo 5 y maximo 16
+        ptrnTres: data.password, // debe ser igual al password
+        ptrnCuatro: `^.{8,32}$` // minimo 8 y maximo 32
+    }
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -37,11 +42,31 @@ const FormUser = () => {
 
     return (
         <form className={styles.formBox} onSubmit={handleSubmit}>
-            <InputForm onChange={onChange} name="firstName" type="text" labelText="Nombre: " value={data.firstName} />
-            <InputForm onChange={onChange} name="lastName" type="text" labelText="Apellido: " value={data.lastName} />
-            <InputForm onChange={onChange} name="email" type="email" labelText="E-mail: " value={data.email} />
-            <InputForm onChange={onChange} name="password" type="password" labelText="Password: " value={data.password} />
-            <InputForm onChange={onChange} name="confirmPassword" type="password" labelText="Confirmar Password: " value={data.confirmPassword} />
+            <InputForm onChange={onChange}
+                name="firstName" type="text" labelText="Nombre: "
+                value={data.firstName} msgError={msgError.errorUno}
+                pattern={pattern.ptrnUno} />
+
+            <InputForm onChange={onChange}
+                name="lastName" type="text" labelText="Apellido: "
+                value={data.lastName} msgError={msgError.errorUno}
+                pattern={pattern.ptrnUno} />
+
+            <InputForm onChange={onChange}
+                name="email" type="email" labelText="E-mail: "
+                value={data.email} msgError={msgError.errorDos}
+                pattern={pattern.ptrnDos} />
+
+            <InputForm onChange={onChange}
+                name="password" type="password" labelText="Password: "
+                value={data.password} msgError={msgError.errorTres}
+                pattern={pattern.ptrnCuatro} />
+
+            <InputForm onChange={onChange}
+                name="confirmPassword" type="password" labelText="Confirmar Password: "
+                value={data.confirmPassword} msgError={msgError.errorCuatro}
+                pattern={pattern.ptrnTres} />
+
             <button type='submit'>Crear Usuario</button>
         </form>
     )
