@@ -3,7 +3,7 @@ import InputForm from '../InputForm/InputForm';
 import styles from './FormUser.module.css'
 
 const FormUser = () => {
-    let initialState = {
+    const initialState = {
         firstName: "",
         lastName: "",
         email: "",
@@ -11,15 +11,16 @@ const FormUser = () => {
         confirmPassword: ""
     }
 
+    const msgError = {
+        errorUno: "Debe tener al menos 2 caracteres!",
+        errorDos: "Debe tener al menos 5 caracteres!",
+        errorTres: "Debe tener al menos 8 caracteres!",
+        errorCuatro: "Las contrasenhas no coinciden",
+    }
+
     const [data, setData] = useState(initialState);
 
-    // const [msgError, setMsgError] = useState({
-    //     firstName: "",
-    //     lastName: "",
-    //     email: "",
-    //     password: "",
-    //     confirmPassword: "",
-    // });
+
 
     const handleSubmit = e => {
         e.preventDefault();
