@@ -23,6 +23,7 @@ const InputForm = (props) => {
                 pattern={pattern}
                 placeholder={labelText}
                 onBlur={handleFocus}
+                autoComplete="off"
                 focus={focus.toString()} />
             <label className={styles.lbl} htmlFor={labelText}>{labelText}</label>
             <p className={styles.error}>{msgError}</p>
